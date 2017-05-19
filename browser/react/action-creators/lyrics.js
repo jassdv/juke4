@@ -1,4 +1,5 @@
 import { SET_LYRICS } from '../constants';
+import axios from 'axios';
 
 export const setLyrics = function(text){
   return {
@@ -12,6 +13,7 @@ export const fetchLyrics = function (artist, song) {
   return function (dispatch, getState) {
     axios.get(`/api/lyrics/${artist}/${song}`)
       .then(res => {
+        console.log('Im Katie')
         dispatch(setLyrics(res.data.lyric));
       });
   };

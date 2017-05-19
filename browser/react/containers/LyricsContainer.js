@@ -33,7 +33,7 @@ export default class LyricsContainer extends React.Component {
     if (this.state.artistQuery && this.state.songQuery) {
 
 
-      fetchLyrics(this.state.artistQuery,this.state.songQuery);
+      store.dispatch(fetchLyrics(this.state.artistQuery,this.state.songQuery))
 
     }
 
@@ -50,9 +50,9 @@ export default class LyricsContainer extends React.Component {
 
 
     render() {
-      console.log(this.state);
+      console.log("this is this.state from LyricsContainer ", this.state);
     return <Lyrics
-      text={this.state.text}
+      text={this.state.lyrics.text}
       setArtist={this.handleArtistInput}
       setSong={this.handleSongInput}
       artistQuery={this.state.artistQuery}
