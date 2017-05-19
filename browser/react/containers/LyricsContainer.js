@@ -50,6 +50,7 @@ export default class LyricsContainer extends React.Component {
 
 
     render() {
+      console.log(this.state);
     return <Lyrics
       text={this.state.text}
       setArtist={this.handleArtistInput}
